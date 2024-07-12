@@ -9,6 +9,7 @@ import { Fragment } from "react";
 function EventDetailsPage() {
   const router = useRouter();
   const event = getEventById(router.query.eventId);
+  console.log(event);
   if (!event)
     return (
       <ErrorAlert>
@@ -22,7 +23,7 @@ function EventDetailsPage() {
       <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
-        address={event.address}
+        address={event.location}
         image={event.image}
         imageAlt={event.title}
       />
